@@ -3,8 +3,8 @@ $.ajaxPrefilter(function (options) {
     //在发起真正的ajax之前先调用这个函数拼接字符串
     options.url = 'http://www.liulongbin.top:3008' + options.url
     //统一为有权限的接口设置请求头
-    if (options.url.indexof('/my/') !== -1) {
-        opyions.headers = {
+    if (options.url.indexOf('/my/') !== -1) {
+        options.headers = {
             Authorization: localStorage.getItem('token') || ''
         }
     }
