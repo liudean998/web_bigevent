@@ -11,7 +11,7 @@ $.ajaxPrefilter(function (options) {
     options.complete = function (res) {
         // console.log(res)   查看响应回来的数据在哪
         //res.responseJSON拿到响应回来的数据
-        if (res.response.JSON.status === 1 || res.responseJSON.message === '身份认证失败') {
+        if (res.responseJSON.status === 1 || res.responseJSON.message === '身份认证失败') {
             //强制清空token
             localStorage.removeItem('token')
             //强制跳转到登录页面
